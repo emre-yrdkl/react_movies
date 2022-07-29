@@ -11,8 +11,7 @@ const App = () => {
     const [searchMovieT, setsearchMovieT] = useState('');
 
     const searchMovies = async (title)=>{
-        console.log("sa")
-        const response = await fetch(`${API_URL}&s=${title}`);//await'in anlamı işlemleri sırayla yapmak ilk önce üstteki await sonra alttaki
+        const response = await fetch(`${API_URL}&s=${title}`);//await'in anlamı işlemleri sırayla yapmak, sırayla tamamlanarak aşağı iner
         const data = await response.json();
         setMovies(data.Search);
     }
@@ -23,7 +22,7 @@ const App = () => {
 
     return(
         <div className='app'>
-            <h1>fuckin movie app</h1>
+            <h1>movie app</h1>
             <div className='search'>
                 <input
                     placeholder="Search the movie"
